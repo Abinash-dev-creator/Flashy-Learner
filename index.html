@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquil Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Tranquil Flashcards</h1>
+        </header>
+
+        <main class="content-area">
+            <section class="input-section">
+                <h2>Create Flashcards</h2>
+                <div class="input-group">
+                    <label for="youtubeUrl">YouTube URL:</label>
+                    <input type="url" id="youtubeUrl" placeholder="Enter YouTube URL">
+                    <button id="fetchYoutube" class="fetch-button">Fetch Data</button>
+                </div>
+                <div class="input-group">
+                    <label for="wikipediaTopic">Wikipedia Topic:</label>
+                    <input type="text" id="wikipediaTopic" placeholder="Enter Wikipedia Topic">
+                    <button id="fetchWikipedia" class="fetch-button">Fetch Data</button>
+                </div>
+            </section>
+
+            <section class="flashcard-section" style="display: none;">
+                <h3 id="data-source-title" class="data-source-title"></h3>
+                  <div class="flashcard-area" >
+                        <div class="card" id="flashcard" >
+                            <div class="front">
+                                <p id="front-text" class="card-text">Term goes here</p>
+                            </div>
+                            <div class="back" style="display: none;">
+                                <p id="back-text" class="card-text">Definition goes here</p>
+                            </div>
+                        </div>
+                  </div>
+                 <div class="card-controls">
+                    <button id="prevCard" class="card-control-btn">Previous</button>
+                    <button id="nextCard" class="card-control-btn">Next</button>
+                    <button id="shuffleCard" class="card-control-btn">Shuffle</button>
+                 </div>
+                 <div class="save-load-area">
+                    <button id="saveCards" class="card-control-btn">Save Cards</button>
+                    <button id="loadCards" class="card-control-btn">Load Cards</button>
+                 </div>
+            </section>
+
+           <section class="quiz-section" style="display: none;">
+                <h2>Quiz Time</h2>
+                <div class="question-area">
+                   <p id="question" class="quiz-question"></p>
+                    <div class="options">
+                        <button class="option" data-index="0"></button>
+                        <button class="option" data-index="1"></button>
+                        <button class="option" data-index="2"></button>
+                        <button class="option" data-index="3"></button>
+                   </div>
+                   <div class="feedback">
+                        <p id="feedback-text"></p>
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="startQuiz" class="quiz-control-btn">Start Quiz</button>
+                    <button id="nextQuestion" class="quiz-control-btn" style="display: none;">Next Question</button>
+               </div>
+           </section>
+
+
+        </main>
+
+         <footer class="music-area">
+            <div class="music-player">
+                 <audio id="backgroundMusic"></audio>
+                 <button id="playMusic" class="music-control-btn">Play</button>
+                 <button id="pauseMusic" class="music-control-btn">Pause</button>
+                 <button id="stopMusic" class="music-control-btn">Stop</button>
+                 <select id="musicSelect" class="music-select">
+                    <option value="music1.mp3">Peaceful Tune 1</option>
+                    <option value="music2.mp3">Peaceful Tune 2</option>
+                 </select>
+            </div>
+         </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
